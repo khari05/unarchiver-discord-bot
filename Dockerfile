@@ -2,9 +2,7 @@ FROM node:16
 
 WORKDIR /app
 
-RUN useradd -ms /bin/bash node
-
-RUN chown node /app/data
+RUN mkdir /app/data && chown node /app/data
 
 COPY ./package* ./
 
