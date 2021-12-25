@@ -3,8 +3,8 @@ import { Command } from './Command'
 import { ChannelWatcher } from '../ChannelWatcher'
 
 export class WatchChannelCommand implements Command {
-  name = 'watch'
-  description = 'toggle archiving this channel'
+  readonly name = 'watch'
+  readonly description = 'toggle archiving this channel'
 
   async execute (interaction: CommandInteraction, client: Client, watcher: ChannelWatcher): Promise<void> {
     if (interaction.member instanceof GuildMember && (interaction.member?.permissions.has('USE_PUBLIC_THREADS') ?? false)) {
